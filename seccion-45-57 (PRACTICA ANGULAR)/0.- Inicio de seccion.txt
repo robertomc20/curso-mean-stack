@@ -1,0 +1,19 @@
+En estas secciones veremos:
+Principalmente Angular: es uno de los framework de js mas popular, desarrollado por google, permite generar aplicaciones web de tipo spa, que significa, 
+single page aplication, osea, que no recarga la pagina en ningun momento, todo se hace en la misma pagina, esta completamente separada del backend, se comunica 
+mediante peticiones ajax y comunicación asincrona.
+Los cambios de secciones y paginas es  completamente dinamico e instantaneo, y si se hace una consulta al servidor, es asincrona.
+
+	1.- Primeros pasos en Angular: 
+	2.- Como generar, usar , etc de los Componentes (Son trozos de la pantalla que hacen cierta cosa, y todo en angular son componentes).
+	3.- Modelos.
+	4.- Que son y como usar las Directivas.
+	5.- Enlaces de datos (Como trabajar con databinding, que es, etc).
+	6.- NgClass.
+	7.- Como trabajar y que es Routing.
+	8.- NgTemplate.
+	9.- Servicios, peticiones HTTP, AJAX. (Como crear servicios, clases, utilizar servicios, http client, peticiones, efectos de carga, etc).
+	10.- Que son y como trabar con filtros y pipes.
+	11.- Formularios (Crear, validar, etc).
+	12.- Desarrollo backend (API rest ful completa, backend completo usando nodeJS, interactuando con una base de datos usando todo lo anterior).
+	13.- Webapp con Angular (Usando el api creado, usaremos nodeJS, express, mongodb, y todo lo aprendido anteriormente en el curso).

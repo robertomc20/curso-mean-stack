@@ -1,0 +1,21 @@
+Mediante consola de comandos, siempre que se trabaja con angular, hay que Instalar/Actualizar Angular CLI que es el programa 
+que genera los proyectos, de angular, entre otras cosas.
+
+Para desintalar Angular:
+npm uninstall -g @angular/cli
+
+npm cache verify
+
+npm cache clear //si no deja, entonces = npm cache clear --force
+-------------------------------------------------------------------
+
+Para instalar Angular CLI:
+npm install -g @angular/cli
+
+-----------------------------------------------------------------
+https://cli.angular.io/
+https://angular.io/cli
+en esta pagina, muestra como usar angular CLI
+
+
+

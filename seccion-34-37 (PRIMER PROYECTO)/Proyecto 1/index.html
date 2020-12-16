@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Proyecto con JavaScript</title>
+
+
+		<!-- Estilos css -->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link id="theme" rel="stylesheet" type="text/css" href="css/green.css" /> <!-- EL ID ACA ES PARA LLAMARLO DPS EN EL JS -->
+
+		<!-- Jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<!-- Sliders, sacados de bxslider.com-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">	
+ 		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+ 		<!-- JS -->
+ 		<script type="text/javascript" src="js/main.js"></script>
+
+ 		<!-- Moment -->
+ 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+ 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.min.js"></script>
+	</head>
+	
+	<body>
+		<!-- Cambiar temas (green, red y blue) -->
+		<div id="selector-theme">
+			<div id="to-green">
+			</div>
+
+			<div id="to-red">
+			</div>
+
+			<div id="to-blue">
+			</div>
+		</div>
+
+		<!--  La sección global abarca toda la caja blanca -->
+		<section id="global">
+			<!-- Cabecera -->
+			<header>
+				<div id="logo">
+					<h1>Proyecto JS</h1>
+				</div>
+
+				<!-- Div para limpiar los flotados -->
+				<div class="clearfix">
+				</div>	
+
+				<nav id="menu">	
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="reloj.html">Reloj</a></li>
+						<li><a href="about.html">Sobre mi</a></li>						
+						<li><a href="contact.html">Contacto</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Slider -->
+			<div id="slider">
+				<div class="bxslider">
+			  		<div><img src="img/hojas.jpg" title="Hojas"></div>
+			  		<div><img src="img/rojo.jpg" title="Hojas rojas"></div>
+			  		<div><img src="img/cielo.jpg" title="Cielo"></div>
+				</div>
+			</div>
+
+			<!-- Contenido -->
+			<section id="content">
+				<div id="posts">
+					<!--  SE HARA LO MISMO DE ABAJO, PERO CARGADO POR POSTS DESDE JSON EN EL SCRIPT MAIN.JS -->
+
+					<!--
+					<article class="post">
+						<h2>Prueba de titulo</h2>
+						<span class="date">Fecha de publicación</span>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus erat erat, finibus a pharetra at, tincidunt vitae enim. Proin imperdiet ultricies nisi, et aliquet tellus tristique lobortis. Vivamus interdum augue diam, at mattis leo congue sit amet. Donec ut ipsum sit amet diam pharetra tempus euismod a justo. Mauris sit amet ullamcorper felis. Donec ac lorem pellentesque, blandit odio quis, laoreet eros. Quisque a nisl ultrices, mattis augue vitae, consequat nulla. Maecenas nec magna erat. Aliquam eget dui sed nulla vulputate hendrerit quis ut elit. Pellentesque volutpat fermentum sapien bibendum euismod. Morbi sed hendrerit tellus.
+						</p>
+
+						<a href="#" class="button-more">Leer más</a>
+					</article>
+
+					<article class="post">
+						<h2>Prueba de titulo 2</h2>
+						<span class="date">Fecha de publicación</span>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus erat erat, finibus a pharetra at, tincidunt vitae enim. Proin imperdiet ultricies nisi, et aliquet tellus tristique lobortis. Vivamus interdum augue diam, at mattis leo congue sit amet. Donec ut ipsum sit amet diam pharetra tempus euismod a justo. Mauris sit amet ullamcorper felis. Donec ac lorem pellentesque, blandit odio quis, laoreet eros. Quisque a nisl ultrices, mattis augue vitae, consequat nulla. Maecenas nec magna erat. Aliquam eget dui sed nulla vulputate hendrerit quis ut elit. Pellentesque volutpat fermentum sapien bibendum euismod. Morbi sed hendrerit tellus.
+						</p>
+
+						<a href="#" class="button-more">Leer más</a>
+					</article>
+				-->
+				</div>
+
+				<aside id="sidebar">
+					<div id="about">
+						<h4><span>¿Quien soy?</span></h4>
+						<img src="img/caracol.jpg"/>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus erat erat, finibus a pharetra at, tincidunt vitae enim. Proin imperdiet ultricies nisi, et aliquet tellus tristique lobortis.
+						</p>
+					</div>
+
+					<div id="login">
+						<h4><span>Identificate</span></h4>
+
+						<form>
+							<label for="name">
+								Nombre
+							</label>
+							<input type="text" name="name" id="form_name"/>
+
+							<label for="email">
+								Correo
+							</label>
+							<input type="text" name="email"/>
+
+							<label for="password">
+								Contraseña
+							</label>
+							<input type="text" name="password" />
+
+							<input type="submit" value="Entrar"/>
+
+						</form>
+					</div>
+				</aside>
+
+				<!-- Div para limpiar los flotados -->
+				<div class="clearfix">
+				</div>
+			</section>
+
+		</section>
+
+		<!-- Pie de pagina -->
+		<footer>
+			Curso de JavaScript -- Roberto Marihuán
+
+			<a href="#" class="subir">Ir arriba</a>
+		</footer>
+	</body>
+
+
+
+</html>

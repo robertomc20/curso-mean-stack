@@ -1,0 +1,232 @@
+se crean los componentes
+hacemos el fichero de app.routing.ts, se importan los modulos y componentes, para luego crear rutas y export de ellas
+
+se importa lo anterior hecho en el app.module.ts y se importan los imports, y los providers.
+
+se crea carpeta css junto con style.css en la carpeta assets. luego se da la nueva ruta del css en el archivo angular.json.
+importamos nuevas fonts, metiendo la carpeta fonts junto con los archivos en la carpeta css, y la usamos en el css con un font-face.
+
+se trabaja componente por componente, y se configuran los estilos css de cada component.
+
+
+--para trabajar con la api
+dentro de carpeta app, se crea carpeta para modelos y servicios
+
+se crean los modelos.
+
+se crea un archivo de conf global global.ts en la carpeta services
+se crea archivo project.service.ts que tiene el import con todos los modulos para crear un servicio
+
+se importan modulos en app.module.ts
+
+si da error el import del rjxs, en consola, npm install --save rxjs-compat
+
+primero haremos el form para crear projectos.
+en el create.component.ts, importamos el modelo que usaremos y el servicio que creamos, y luego lo cagamos (el servicio) en el @component como providers
+luego en el constructor se declara la propiedad del servicio
+y pasamos los parametros de nuestro objeto
+
+luego creamos el from en el create.html
+para hacer un form de angular se debe declar asi
+<form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+</form>
+
+luego creamos el metodo onSubmit en el ts
+
+le damos estilos en el style css, generamos unos estilos para todos los forms que se vayan a crear.
+
+para validar los campos, se le pone required en todos los input: ejemplo
+<p>
+	<label for="category">Categoria</label>
+	<input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required/>
+	<span class="form_error" *ngIf="category.touched && !category.valid">
+		La categoria es obligatoria
+	</span>
+</p>
+
+le damos estilos a los span del form
+
+para hacer guardar los projectos del form en la bd, en project.service.ts se crea el metodo saveProject en el onSubmit
+y se usa el metodo creado en la api save-project (se puede ver  los metodos creados en el controller de la api o en las rutas mas facilmente)
+
+en el html se le hace un div para un guardado correcto y uno fallido, editamos los estilos del mensaje en styles y los condicionamos
+para que solo salgan si fue exitoso o erroneo con un ngIf
+
+luego haremos un metodo para subir archivos, en este caso fotos
+creamos un nuevo servicio en services, upload.service.ts
+dentro, importamos el injectable y el global
+y usamos el decorador injectable para declarar el servicio
+definimos la variable del url para definir la propiedad, y le asignamos un valor en el constructor como buena practica
+creamos elmetodo makefilerequest que permitira hacer una peticion ajax clasica pero adjuntando un archivo para subir
+//el metodo le pasamos el url que le haremos la peticion ajax, los posibles parametros a enviar, un array de archivos (files ya esta por defecto en angular)
+y luego el name, que sera el nombre del parametro que recibira el backend
+makeFileRequest(url: string, params: Array<string>, files: Array<File>, name: string){
+		//retornamos una promesa
+		return new Promise(function(resolve, reject){
+			var formData:any = new FormData(); aqui creamos un formulario clasico que nos va permitir crear una especie de form en un objeto
+			var xhr = new XMLHttpRequest(); xhr es un sinonimo de ajax, y contiene un objeto xmlhttprequest, que es el tipico objeto de peticiones asincronas de js 
+
+			for(var i = 0; i < files.lenght; i++){ aca recorremos el array de archivos que nos puede estar llegando
+				formData.append(name, files[i], files[i].name);	aqui en este caso, al form le adjuntamos los campos que queremos
+			}
+
+			xhr.onreadystatechange = function(){	cuando haya un cambio
+				if(xhr.readyState == 4){	si la peticion ajax	el 4 es porque si, asi funcionan estos valores
+					if(xhr.status == 200){	fue exitose pues
+						resolve(JSON.parse(xhr.response));	nos entrega la respuesta del servicio
+					}else{
+						reject(xhr.response);	y si no, hacemos el reject de la response
+					}
+				}
+			}
+
+			xhr.open('POST', URL, true);	por ultimo, hacemos la peticion por post, con .open(metodo post, la url indicada, y true para que la haga
+			xhr.send(formData);	y tambien definimos que la envie con el metodo .send, mandamos todo el form
+		});
+	}todo esto permite subir archivos a nuestro back end
+
+luego lo usaremos en nuestro create componente ts, lo importamos, lo cargamos en los providers, y lo declaramos como propiedad en el () del constructor
+
+y ya se podria utilizar el servicio, en el html del create compnoent, hay que ponerle el evento change al input de la foto, esto hace que cuando hacemos un cambio en un input
+va lanzar otro metodo que tengamos en nuestro componente.
+
+luego creamos un metodo en la clase del componente
+
+public filesToUpload: Array<File>; creamos esta varaible primero
+
+luego el metodo
+fileChangeEvent(fileInput: any){
+    	this.filesToUpload = <Array<File>>fileInput.target.files; aqui forzamos a que filesToUpload, se de tipo array, tipo File, fileInput es lo que captura el evento
+, el target y files selecciona todos los archivos que vamos a subir.
+}
+
+luego en el onSubmit, donde guardamos los datos, dentro del 
+onSubmit(form){
+  	    //el metodo suscribe permite recojer lo que devuelve la api rest y subscribirse al observable
+  	    this._projectService.saveProject(this.project).subscribe(
+  	    	response => {
+  	    		if(response.project){
+  	    			this._uploadService.makeFileRequest(Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'img')
+  	    			.then((result:any) => {
+  	    				this.status = 'success';
+  	    				console.log(result);
+  	    				form.reset();
+  	    			});	    			
+  	    		}else{
+  	    			this.status = 'failed';
+  	    		}
+  	    	},
+  	    	error => {
+  	    		console.log(<any>error);
+  	    	}
+  	    );
+    }
+el metodo makefilerequest necesita la url para hacr esto, que lo podemos conseguir importando la global
+
+
+ahora haremos un listar proyectos en el project.service, crearemos un metodo para sacar de la bd y consumir desde la api todos los proyectos, un json con la coleccion
+de todos los documentos de la bd
+
+una vez listo el metodo, nos vamos al projects.component.ts y ahi importaremos el modelo, el servicio, global. y el proejctservice como providers
+cargamos el servicio en una propiedad de la clase del constructor, y tambien el url, que le daremos un valor en el contructor con la url de global.
+
+cargamos el metodo getProjects, usando el servicio
+
+y luego se carga el metodo en el OnInit.
+
+para finalizar en el html del componente, atraves de *ngFor recorremos los projectos y los listamos con los datos que queramos.
+
+
+creamos un componente para el detalle de un  proyecto en concreto
+ng g component components/detail
+
+los importamos en el app routing y en el path de este
+
+luego en el projects component html, en el contenido de todo el li, le hacemos un <a [routerLink] para redirigir a la pagina de detalle
+le quitamos el resaltado del <a> en los estilos y le ponemos letra negra
+
+hacemos el metodo en el project.service.ts, parecido al anterior pero se le envia un id
+
+luego en el detail.component.ts, importamos global, el modelo del projecto, projectservice y el router
+importamos el servicio en lols providers
+hacemos una varaible project. y tambien la url para usar el global y le damos el valor en el constructor,
+en el constructor declaramos las propiedades del servicio, del router, y del activatedroute
+
+hacemos el metodo getProject para usarlo en el backend
+le mandamos una id en el ()
+aqui dentro llamamos al proejct service y sacamos el id, con la 
+
+en el on init le mandamos los parametros del route para recojer el parametro id que llega por la url (para esto se importa el route)
+y ahi mismo recojemos el id del metodo
+
+luego en el html del detail lo trabajaremos y les pondemos styles
+
+ahora haremos que el boton borrar funcione
+
+se trabajara en el mismo detail.component
+
+en el project service.ts se hace el metodo deleteProject 
+
+luego en el detail.compnoent.ts
+se hara el metodo delete project y se usara el metodo del servicio
+
+una vez listo, se llama el metodo creado desde el cdetail.omponente.html
+
+ahora creamos el componente edit, ng g component components/edit
+
+lo cargamos en el app.routing.ts
+
+le hacemos un routerlink hacia la pagina de edit en el boton editar, junto con pasrle la id del proyecto
+
+ahora podemos hacer el metodo en el project service de edit
+es igual que el de borrar, pero con un http.put, y se le pasa la variable params que son los datos del project, transofmradas en json
+
+ahora ya podemos usar el metodom en el componente del edit.ts
+importamos lo mismo que usamos en el create component junto con los providefrs, las variables, y constructor, editamos el this.title, y se borra el this.project
+
+y copiamos el ngOnInit y el getProject del detail, ya que usaremos los mismos metodos
+esto hace, que con el onInit, vamos a recojer el paramwetro que nos llega por el url que es el id
+vamos a llamar el metodo getProject con la id, y esto nos consigu7e el objeto del projecto, y eso llena todo el formulario0
+
+ y ahora reutilizamos la vista del componente create, ya que nos sirve, en template templateUrl: '../create/create.component.html',
+tambien se importa el router, activatedroute, params, y en el constructor se añaden.
+
+tambien se crea la variable public url:string; y en el constructor{ se define this.url= Global.url} para poder mostrar la imagen
+
+luego se edita el html del create para ver cambios, importantes usar *nfIf="project" en divs principales para verificar que si haya proyecto que cargar y evitar errores
+
+luego en el editcomponent, se hace el evento onSubmit, y se llama el servicio de update, y se copia el reponse que hicimos en create, ya que es exactamente 
+lo mismo que se necesita hacer para guardar el edit que se haga a un proyecto, solo borramos el form.reset() ya que no nos interesa esta vez, y tambien se copia
+el metodo fleChangeEvent del create en el edit, ya que se usa en el onSubmit
+. antes en el onSubmit, se le hace un if(this.filesToUpload){ en el if del response, para que solo se suban los archivos si la seleccion de archivos
+es igual o mayor a 1.
+
+y estaria listo.
+
+ahora haremos la confirmacion para borrar o editar
+para eso, en detailcomponents, crearemos la variable confirm y por defecto le podnremos valor false
+public confirm: boolean;
+this.confirm = false; en el {} del cosntructor
+
+hacemos el metodo setConfirm para lanzar la confiramcion 
+
+luego en el html del detal, se hace esto en la parte dew los botones
+<p *ngIf="confirm == false">
+	<a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>
+	<a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+</p>
+
+<p *ngIf="confirm == true">
+	¿Estas seguro de eliminar este proyecto?
+	<a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+	<a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
+</p>
+
+
+
+
+
+
+
+
+

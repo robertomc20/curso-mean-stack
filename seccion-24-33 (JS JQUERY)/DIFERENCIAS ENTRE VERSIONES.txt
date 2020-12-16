@@ -1,0 +1,13 @@
+Hay 3 versiones
+	La version 1 fue la primera, tenia compatibildiad con internet explorer 6 7 y 8
+	era una libreria bastante pesada ya que tenia varias versiones de la misma libreria 
+	en distintos ficheros para que funcionara en cada navegador.
+
+	En la version 2 se elimino la compatibilidad con internet expllorer 6 7 y 8
+	ademas de hacer mejoras de rendimiento y tamaños de la libreria, cargaba mas rapido e iba mejor.
+
+	En la version 3 se añadio soporte a promesas, nuevos metodos, y una libreria mucho mas compatbile
+	con HTML5, mejor rendimiendo entre otras cosas.
+
+todas las versiones de jquery funcionan igual, la unica diferencia es la compatibilidad 
+con navegadores antiguos.

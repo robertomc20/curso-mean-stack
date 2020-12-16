@@ -1,0 +1,8 @@
+buscar en google jquery minified version, y en el head se añade el script
+
+Google CDN:
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+https://www.w3schools.com/jquery/jquery_get_started.asp

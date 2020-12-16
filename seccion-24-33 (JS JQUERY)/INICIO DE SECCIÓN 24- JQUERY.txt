@@ -1,0 +1,10 @@
+En las siguientes secciones veremos JQUERY:
+	1. Que es, como funciona, diferencias de versiones, etc.
+	2. Como trabajar con selectores (como seleccionar elementos del dom, como clases, css, etiquetas, etc.)
+	3. Eventos (como el click, teclas, etc.)
+	4. Efectos, animaciones, transiciones, etc.
+	5. Peticiones asincronas, peticiones ajax, metodo load, get, post, $ajax, etc.
+	6. Con todo lo anterior, tendriamos la base de jquery y aprederemos a usar jQuery UI, para que sirve, etc.
+	7. Animaciones dentro de la página.
+	8. Plugins y widgets.
+	9. Al terminar lo anterior, realizaremos proyecto con todo lo aprendido (html, js, jquery, etc.)

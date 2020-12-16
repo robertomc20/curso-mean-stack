@@ -1,0 +1,5 @@
+Que son los hooks de los componentes?
+son eventos que se ejecutan en un momento dado del ciclo de vida del componente, es decir, son eventos que se van a lanzar dependiendo del estado
+que este el componente, por ej, cuando se inicia el componente, cuando se hace un cambio en el componente, etc.
+
+uno de los hooks mas importantes, son el OnInit, que se implementa porque es una interfaz y permite usar el metodo ngOnInit

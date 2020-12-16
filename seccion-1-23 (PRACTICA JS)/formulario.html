@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Ejercicio DOM, Eventos y Funciones</title>
+		<script type="text/javascript" src="js/32-ejercicio-dom.js"></script>
+		<style>
+			.box{
+				width: 200px;
+				height: 250px;
+				float: left;
+				margin: 20px;
+			}
+			.dashed{
+				border: 3px dashed black;
+				padding: 5px;   
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Ejercicio DOM, Eventos y Funciones - Curso JS</h1>
+
+		<!--
+			1. Formulario campos: nombre apellidos y edad  
+			2. Boton de enviar el formulario: eventos submit
+			3. Mostrar datos por pantalla (en un div o algo)
+			4. Validación de formulario
+
+		-->
+		<div class="box">
+			<form action="#" method="POST" id="formulario" onsubmit="return false;">  <!--si se le pone una # en el action, no redirige a la misma pag despues de enviar form-->
+				<label for="nombre">Nombre:</label> <br/>								<!--junto con un onsubmit="return=false"-->
+				<input type="text" name="nombre" id="nombre"/><br/>
+				<span id="error_nombre"></span>
+
+				<label for="apellidos">Apellidos:</label><br/>
+				<input type="text" name="apellidos" id="apellidos"/><br/>
+
+				<label for="edad">Edad:</label><br/>
+				<input type="number" name="edad" id="edad"/><br/>
+
+				<input type="submit" value="Enviar" id="submit"/><br/>
+
+
+			</form>
+		</div>
+
+		<div class="box dashed">
+			<!-- OPCION 1  dejarlo así como esta y hacerlo todo el js-->
+			<h3>Información del Usuario</h3>
+			<hr/>
+
+			<!-- OPCION 2 -->
+			<p id="p_nombre">
+				Nombre: <span></span> <!-- dentro del span iria el resultado, el cual se obtiene en el js -->
+			</p>
+			<p id="p_apellidos">
+				Apellidos: <span></span>
+			</p>
+			<p id="p_edad">
+				Edad: <span></span>
+			</p>
+
+		</div>
+	</body>
+
+</html>

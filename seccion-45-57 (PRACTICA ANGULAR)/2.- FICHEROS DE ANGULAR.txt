@@ -1,0 +1,25 @@
+fichero src:
+	tslint.json = configuracion del inter que tiene ts, indenta el codigo, entre varias cosas.
+	tsconfig.json = otra configuracion de ts.
+	read.me = información del proyecto.
+	package.json = fichero de configuracion principal del proyecto, tiene una serie de scripts y comandos del proyecto de angular, dependencias, paquetes, etc. 
+	en este mismo fichero se le puede indicar nuevos paquetes y dependencias para nuestro el proyecto.
+	angular.json = fichero de configuracion del proyecto, donde se le puede indicar assets que va cargar nuestro proyecto, styles, scripts, configuraciones , etc.
+	.gitignore = fichero de git para no comitear ciertos directorios o archivos en nuestro proyecto.
+	.editorconfig = configuracion de codigo, no muy relevante.
+
+carpeta e2e : temas de pruebas, configuraciones internas del framework.
+
+carpeta node_modules : se descargan todos los paquetes, librerias, dependencias, todo el framework en si.
+
+carpeta src : la carpeta que mas tocaremos, tiene ficheros de conf de ts, styles, polyfills que es para conf de navegadores, main.ts donde se carga toda la app de angular,
+karma.conf.js para temas de pruebas, index.html que es la pagina que se va cargar en si en nuestro navegador, fichero de enviroment para configurar aspectos de temas 
+de produccion.
+	carpeta assets : donde guardamos nuestras imagenes y este estilo de cosas.
+	carpeta app: aqui ira toda la aplicación.
+		app.module.ts: fichero que configura el modulo principal app donde van cargado el resto de componentes y modulos de la app.
+		app.component.ts: fichero de componentes que es un clase
+		app.component.spec.ts:
+		app.component.html: vista del componente.
+		app.component.css: archivo css del componente. 
+	

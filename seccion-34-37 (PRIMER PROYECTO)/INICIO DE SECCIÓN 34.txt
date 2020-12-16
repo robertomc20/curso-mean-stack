@@ -1,0 +1,13 @@
+Desde la sección 34 en adelante haremos un proyecto HTML5, css3, Javascript, Jquery y plugins
+
+Veremos: 1. Primeros pasos (creacion de directorios y ambiente de trabajo).
+	 2. Maquetación (darle estilo a la pagina, html css, como hacer menu, maquetar articulos, estilos al sidebar, pie de pagina, etc).
+	 3. Galería /  Listado dinamico de articulos y post, como recorrerlos, etc.
+	 4. Cambiador de temas de la web (boton que permitira cambiar tema de colores, fondos, etc).
+	 5. Scroll suavizado (cuando nosotros bajemos en la web, abra un boton subir, al hacerle click con jquery, la pagina hara scroll suavizado hacia arriba).
+	 6. LocalStorage (como hacer una especie login falso, que quede identificado en la web y sus páginas).
+	 7. Acordeón (caja con varias cabeceras, si se le hace click a un se vera de lo de adentro.
+	 8. MomentJs y Reloj (Cada segundo que pase se ira actualizando la hora).
+	 9. Formulario de contacto.
+	 10. Validación de formulario con uso de plugins, libreria, etc.
+	 11. Más cosas que se darán en el desarrollo del proyecto.

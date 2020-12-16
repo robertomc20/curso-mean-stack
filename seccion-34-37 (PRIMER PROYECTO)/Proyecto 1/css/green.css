@@ -1,0 +1,20 @@
+/* Se copia esto al red, blue y green.css */
+#logo{
+	background: #235E3D;
+}
+
+#menu ul li:hover{
+	background: #235E3D;
+}
+
+.button-more{
+	background: #235E3D;
+}
+
+body{
+	/*Para cargar un archivo dentro de un css, se debe usar url('ruta/archivo.extension')*/
+	/*el .. es para salir un directorio afuera, ya que el css esta en un carpeta y no donde esta el index.html*/
+	background: url('../img/hojas.jpg');
+	/*fixed es para que si scrolleo la pagina, el fondo no se acabe en ningun momento*/
+	background-attachment: fixed;
+}

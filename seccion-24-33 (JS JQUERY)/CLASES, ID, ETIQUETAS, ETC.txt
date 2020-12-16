@@ -1,0 +1,2 @@
+una clase es para cuando necesitamos dar algo comun a muchos elementos
+una id es para dar algo a algo en concreto.

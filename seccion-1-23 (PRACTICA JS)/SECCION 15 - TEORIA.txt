@@ -1,0 +1,26 @@
+JS en profundidad
+
+De aqui en adelante veremos:
+
+DOM = document object model, basicamente son todos los elementos que hay dentro 
+de una pagina web, etiquetas, etc.
+
+BOM = browser object model, nos permite manipular el navegador web y la ventana 
+para obtener datos con js, para hacer cualquier cosa con la ventana y el navegador.
+
+EVENTOS = un evento es algo que sucede en la pagina cuando el user ejecuta una 
+acción, ejemplo: click en un campo, boton, etc.
+
+BLOQUE DE EJERCICIOS = Ejercicios donde uniremos lo visto en las secciones pasadas 
+más el DOM, BOM y EVENTOS.
+
+JSON = es la notación de objetos de js, que permite hacer objetos.
+
+LocalStorage = es el almacenamiento local del navegador, permite guardar informacion 
+en el navegador para que persista en la sesión del usuario entrecomillas.
+
+PETICIONES ASINCRONAS = trabajar con fetch, ajax, peticiones, promesas, etc.
+
+FECHAS Y MAS = ver como usar fechas y otras funciones de JS.
+
+EMPIEZA DESDE EL 28-dom.js

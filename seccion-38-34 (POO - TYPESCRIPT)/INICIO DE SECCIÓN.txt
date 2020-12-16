@@ -1,0 +1,17 @@
+En estas secciones veremos:
+	1. TypeScript(TS) y POO en Javascript.
+	2. Introducción a ...
+ 	****Programación orientada a objetos: Paradigma de programación, y forma de trabajar que permite
+	estructurar mucho mejor el codigo y seguir mejores practicas dividiendo todo en clases, objetos o entidades. 
+	****Typescript (Desarrollado por microsoft, 85-90% de JavaScript normal, Tipado fuerte o estatico(Significa que hay varios tipos de datos
+	que hay que respetar al crear una variable o tipos de datos) y lenguaje interpretado, osea que se transpila a JS, nosotros codificamos en TS y 
+	el transpilador lo compila-transpila a JS que puedan entender todos los navegadores, aparte, este lenguaje se ocupa mucho en ANGULAR, 
+	casi todo lo de TypeScript es aplicable a JS, menos el tipado).
+	3. Objetos json.
+	4. Entornos de desarrollos, instalación de typescript, nodejs, consolas de comando.
+	5. Primeros pasos en TS, temas de compilación de codigo.
+	6. Variables y tipado de TS, let y var.
+	7. Programación orientada a objetos, como funciona.
+	8. Clases, metodos y propiedades.
+	9. Constructores, interfaces y herencias.
+	10. Decoradores en TS (Se ocupara mucho en angular).

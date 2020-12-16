@@ -1,0 +1,6 @@
+En estas secciones veremos:
+Principalmente, desarrollo web back-end, lo siguiente:
+		1. Desarrollo de MEAN Stack (MEAN Stack significa = MONGODB, EXPRESS, ANGULAR, NODEJS, este conjunto de tecnologias forma el MEAN stack).
+		2. MongoDB.
+		3. NodeJS.
+		4. Creación de API RESTful.

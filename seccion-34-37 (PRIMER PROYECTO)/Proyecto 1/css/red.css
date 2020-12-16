@@ -1,0 +1,22 @@
+/* Se copia esto al red, blue y green.css 
+ solo cambian las fotos y los colores*/
+body{
+	/*Para cargar un archivo dentro de un css, se debe usar url('ruta/archivo.extension')*/
+	/*el .. es para salir un directorio afuera, ya que el css esta en un carpeta y no donde esta el index.html*/
+	background: url('../img/rojo.jpg');
+	/*fixed es para que si scrolleo la pagina, el fondo no se acabe en ningun momento*/
+	background-attachment: fixed;
+}
+
+#logo{
+	background: #CA3413;
+}
+
+#menu ul li:hover{
+	background: #CA3413;
+}
+
+.button-more{
+	background: #CA3413;
+}
+

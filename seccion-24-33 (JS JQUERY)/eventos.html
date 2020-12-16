@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Aprendiendo jQuery</title>
+
+		<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script> <!--esta forma es la mas segura-->
+		<script type="text/javascript" src="js/02-eventos.js"></script>
+
+		<!-- Solo porque son pocos estilos, lo estamos haciendo acá, si no, se crearia un archivo aparte-->
+		<style>
+			#caja{
+				width: 250px;
+				height: 250px;
+				border: 2px solid black;
+				background: yellow;
+				transition: 300ms all;  /*esto permite que el cambio de color de alguna accion sea mas lento*/
+			}
+
+			/*  esto lo haremos pero con jQuery (02-eventos.js)
+			#caja:hover{ 		--esto permite el estilo al pasar el mouse por encima de algo, en este caso, la caja
+				background: red; 
+				cursor: pointer;   --hace que el mouse sea la manito
+			} 
+			*/
+
+			input{
+				padding: 10px;
+				width:300px;
+				font-size: 20px;
+			}
+
+			#datos{
+				border: 4px dashed black;
+				padding: 10px;
+				width: 250px;
+				height: 50px;
+				margin-top: 10px;
+				display: none;
+			}
+
+			#sigueme{
+				width: 25px;
+				height: 25px;
+				position: absolute;
+				display: block;
+				background: yellow;
+				opacity: 0.3;
+				border: 3px solid black;
+				border-radius: 999px;
+			}
+		</style>
+
+
+	</head>
+	<body>
+		<h1>Aprendiendo eventos con jQuery</h1>
+
+		<div id="sigueme">
+		</div>
+
+		<form>
+			<input type="text" id="nombre" />
+		</form>
+
+		<div id="datos"></div>
+
+		<br/>
+
+		<div id="caja">
+			Soy una caja
+		</div>
+
+	</body>
+</html>

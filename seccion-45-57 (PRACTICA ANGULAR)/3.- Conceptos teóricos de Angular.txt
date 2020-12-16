@@ -1,0 +1,40 @@
+Una aplicación de angular, esta formada basicamente por componentes, plantillas, decoradores y metadatos, servicios, providers, directivas y modulos.
+
+Componentes:
+	Un componente al final va a controlar un trozo de pantalla o de la vista.
+	
+	Todo lo que se puede ver en pantalla, es controlado y gestionado por este tipo de elementos.
+	
+	La lógica de un componente dentro de una clase en Angular es que da un soporte a una vista interactuando con ella a través de un API
+	con propiedades y métodos.
+
+	El componente hace de mediador entre la vista a través de la plantilla y lógica de la app donde se incluirá el modelo de datos, es decir
+	una especie de controlador.
+
+Plantillas:
+	Las plantillas van a definir la vista de los componentes.
+
+	Son htmls y tienen sintaxis especial de Angular. Trabajando con el databinding y las directivas.
+
+Decoradores y metadatos:
+	Con los decoradores(patrón de diseño) vamos a configurar dinamicamente atributos/metadatos de las clases y componentes.
+
+	Los metadatos van a describir a las clases pero tambiénd describen relaciones, por ejemplo, si tenemos un componente y una plantilla
+	el metadato se va a encargar de decirle a Angular que ese componente y esa plantilla van a estar juntos, entre otras muchas cosas.
+
+Servicios:
+	Son clases con un objetivo claro, facilita la reutilización, son un tipo de elemento dentro de la arquitectura de Angular y mediante
+	la inyección de dependencias los podemos usar en otros componentes principales.
+	Por ejemplo, tenemos modelo de zapatillas, podemos crear un servicio de zapatillasservice y ahi se haran un monton de metodos de 
+	peticiones ajax a nuestro backend relacionados con esta entidad. Esto es importante en angular ya que si no, tendriamos demasiado codigo
+	en nuestros componentes, y no es la mejor práctica.
+
+Providers:
+	Son servicios que nos proveen de datos o funcionalidades mediante sus métodos. Existen providers/servicios propios de Angular o creados por nostros mismos.
+
+Directivas:
+	Son funcionalidades aplicables al DOM y a los elementos HTML en las plantillas de un componente. Por ejemplo una directiva puede servir para controlar
+	que un div se muestre o no, o no recorrer un array en la vista(directivas estructurales, estructuras condicionales y de control) o incluso
+	también puede servir para darle un estilo u otro a un elemento HTML o también para interactuar con el modelo de datos del componente.
+
+	Básicamente son nuevos atributos para aplicarle a cualquier cosa en nuestra plantilla/vista. (For, if, switch, etc)

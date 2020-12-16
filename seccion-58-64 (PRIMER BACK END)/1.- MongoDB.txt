@@ -1,0 +1,17 @@
+
+MongoDB es en sistema gestor de base de datos no sql lider del mercado actualmente(2020)
+
+	SQL					NoSQL
+	-Relacionales				-No relacionales
+	-Tablas					-JavaScript(no se ocupa lenguaje sql, si no que, js)
+	-Esquema				-Orientadas a documentos(json,bson)
+						-Sencillez
+						-Velocidad
+						-Esquema libre
+
+
+
+	Esquema tabla sql			Base de datos > colección en vez de tabla
+	|columna |columna				 |campo    |campo
+    fila|registro|registro			documento|datosDoc.|datosDoc.
+    fila|registro|registro			documento|datosDoc.|datosDoc.

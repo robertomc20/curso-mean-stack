@@ -1,0 +1,41 @@
+
+NodeJs basicamente es una plataforma que nos permite desarrollar con js en el servidor.
+En esta sección veremos sobre:
+	1.- Primeros pasos, introducción a nodeJs, y como hacer una app con nodeJs.
+	2.- Conexión a la bd.
+	3.- Crear servidor.
+	4.- Postman y el cliente, que es un cliente restful que permite manipular peticiones ajax que hacemos al servidor
+	para testar y debuggear nuestra app del backend.
+	5.- Modelos.
+	6.- Modelo vista-controlador.
+	7.- Controlador y rutas, como crearlos.
+	8.- Subir archivos.
+	9.- Librerias.
+	10.- Configuraciones.
+	11.- BackEnd con NodeJs.
+	12.- Front-end con Angular.
+
+UNA API-RESTFUL ES UN SERVICIO, UN BACKEND, QUE PERMITE RECIBIR PETICIONES HTTP Y DEVOLVER RESULTADO EN JSON, ESTE TIPO DE SERVICIO REST
+LO PUEDE CONSUMIR CUALQUIER DISPOSITIVO O APLICACION QUE ENTIENDA PROTOCOLO HTTP, DISPOSITIVO MOVIL, CAFETERA, ETC, CUALQUIER DISPOSITIVO
+QUE ENTIENDA PROTOCOLO HTTP.
+	
+
+para iniciar un proyecto nodejs, en consola desde el directorio que se va a trabajar, se ingresa
+npm init (para iniciar proyecto de node) .js
+ingresar nombre del paquete
+ingresar version, en este caso, la 1
+descripcion, una descripcion del proyecto
+entrypoint: index.js
+lo demas se puede omitir
+licencia: MIT
+
+-------
+para instalar las librerias/dependecias a usar
+npm install express --save	| express es un framework para trabajar con http, hacer rutas, recibir y manejar peticiones, etc.
+npm install body-parser --save	| bodyparser es un paquete/libreria que sirve para convertir las peticiones al backend a un objeto json usable por js
+npm install connect-muiltiparty	| conecctmultiparty permite subir archivos al backend, y poder trabajar con el protocolo files, recojer y guardar ficheros en servidor
+npm install mongoose --save	| mongoose es una libreria que es un orm para trabajar con mongodb, tiene una serie de metodos para trabajar facilmente con mongodb
+npm install nodemon --save-dev	| permite que al ejecutar el servidor nodejs, cada vez que se hace un cambio en el codigo, automaticamente se refresca e inicia nuevamente el servidor.
+NODEMON SOLO FUNCIONA EN LOCAL, NO EN UN SERVIDOR.
+
+
